@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://unifiedNetwork.com.mx/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://unifiedNetwork.com.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://unifiedNetwork.com.mx/">
+      <s:element name="UpdateFactura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="facturaGuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFacturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateFacturaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEnvio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="envioGuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shipId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEnvioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateEnvioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateFacturaSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFactura" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFacturaSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEnvioSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEnvio" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEnvioSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEnvioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSUpdateFSoap">
+    <wsdl:operation name="UpdateFactura">
+      <wsdl:input message="tns:UpdateFacturaSoapIn" />
+      <wsdl:output message="tns:UpdateFacturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvio">
+      <wsdl:input message="tns:UpdateEnvioSoapIn" />
+      <wsdl:output message="tns:UpdateEnvioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSUpdateFSoap" type="tns:WSUpdateFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateFactura">
+      <soap:operation soapAction="http://unifiedNetwork.com.mx/UpdateFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvio">
+      <soap:operation soapAction="http://unifiedNetwork.com.mx/UpdateEnvio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSUpdateFSoap12" type="tns:WSUpdateFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateFactura">
+      <soap12:operation soapAction="http://unifiedNetwork.com.mx/UpdateFactura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvio">
+      <soap12:operation soapAction="http://unifiedNetwork.com.mx/UpdateEnvio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSUpdateF">
+    <wsdl:port name="WSUpdateFSoap" binding="tns:WSUpdateFSoap">
+      <soap:address location="http://un-app-01:8084/WSUpdateF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSUpdateFSoap12" binding="tns:WSUpdateFSoap12">
+      <soap12:address location="http://un-app-01:8084/WSUpdateF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
