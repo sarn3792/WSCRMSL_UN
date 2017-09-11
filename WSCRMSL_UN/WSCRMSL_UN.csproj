@@ -103,11 +103,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\CRM\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\CRM\WSUpdateF.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -117,21 +112,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.asmx" />
-    <None Include="Web References\CRM\WSUpdateF.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\Beans\Invoice.cs" />
-    <Compile Include="Code\Beans\Shipping.cs" />
-    <Compile Include="Code\Controllers\CustomerController.cs" />
-    <Compile Include="Code\Controllers\InvoiceController.cs" />
-    <Compile Include="Code\Controllers\ShippingController.cs" />
+    <Compile Include="Code\Controllers\CorporativeController.cs" />
+    <Compile Include="Code\Controllers\ProjectController.cs" />
+    <Compile Include="Code\Controllers\SubsidaryController.cs" />
     <Compile Include="Code\DataBaseSettings.cs" />
-    <Compile Include="Code\Models\CustomerModel.cs" />
-    <Compile Include="Code\Models\InvoiceModel.cs" />
-    <Compile Include="Code\Models\ShippingModel.cs" />
+    <Compile Include="Code\Models\CorporativeModel.cs" />
+    <Compile Include="Code\Models\ProjectModel.cs" />
+    <Compile Include="Code\Models\SubsidaryModel.cs" />
     <Compile Include="Default.asmx.cs">
       <DependentUpon>Default.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -142,11 +134,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\CRM\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -155,17 +142,7 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://un-app-01:8084/WSUpdateF.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\CRM\</RelPath>
-      <UpdateFromURL>http://un-app-01:8084/WSUpdateF.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>WSCRMSL_UN_CRM_WSUpdateF</CachedSettingsPropName>
-    </WebReferenceUrl>
+    <Folder Include="Code\Beans\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

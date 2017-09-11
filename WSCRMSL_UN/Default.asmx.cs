@@ -17,49 +17,23 @@ namespace WSCRMSL_UN
     [System.Web.Script.Services.ScriptService]
     public class Default : System.Web.Services.WebService
     {
-        //Corporativo únicamente inserta y no regresa nada
+        //Corporativo o Subsidiaria
         [WebMethod]
-        public String SaveCustomer(String fullName, String IDCrm)
+        public String Save(String fullName, String GuidCorporative, String GuidSubsidary)
         {
             try
             {
-                CustomerController.SaveCustomer(fullName, IDCrm);
-                return "Corporativo guardado exitosamente";
-                //return CustomerController.GetCustomerID(IDCrm); //CustID del corporativo
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        //[WebMethod]
-        //[ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
-        //public String GetCustomerID(String IDCrm)
-        //{
-        //    try
-        //    {
-        //        return CustomerController.GetCustomerID(IDCrm);
-        //    } catch (Exception ex)
-        //    {
-        //        return String.Format("Error: '{0}'", ex.Message);
-        //    }
-        //}
-
-        [WebMethod]
-        public String SaveInvoiceInformation(String CustIDInvoice, String GuidInvoice, String GuidCorporate, String userID, Invoice info)
-        {
-            try
-            {
-                InvoiceController.SaveInvoice(CustIDInvoice, GuidInvoice, GuidCorporate, userID, info);
-                if (CustIDInvoice == " ")
+                if(GuidSubsidary == null || GuidSubsidary.Trim() == string.Empty) //si no viene subsidiaria es un corporativo
                 {
-                    CRM.WSUpdateF crm = new CRM.WSUpdateF();
-                    String result = crm.UpdateFactura(GuidInvoice.ToUpper().Trim(), InvoiceController.GetCustID(GuidInvoice).Trim());
+                    CorporativeController.SaveCorporative(fullName, GuidCorporative);
+                }
+                else
+                {
+                    System.Threading.Thread.Sleep(10000);
+                    SubsidaryController.SaveSubsidary(fullName, GuidCorporative, GuidSubsidary);
                 }
 
-                return "Información insertada correctamente";
-
+                return "Registro guardado exitosamente";
             }
             catch (Exception ex)
             {
@@ -68,25 +42,17 @@ namespace WSCRMSL_UN
         }
 
         [WebMethod]
-        public String SaveShippingInformation(String custID, String GuidShipping, String shipToID, String userID, Shipping info)
+        public String SaveProject(String projectID, String projectName, String GuidProjectCRM)
         {
             try
             {
-                ShippingController.SaveShippingInformation(custID, GuidShipping, shipToID, userID, info);
-                if(shipToID == String.Empty) //Update shipToID en CRM
-                {
-                    CRM.WSUpdateF crm = new CRM.WSUpdateF();
-                    crm.UpdateEnvio(GuidShipping, ShippingController.GetShipToID(GuidShipping));
-                    
-                }
-                return "Shipping information was successfully save";
+                ProjectController.Save(projectID, projectName, GuidProjectCRM);
+                return "Registro guardado exitosamente";
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-        //falta agregar el método get para obtener el ShipToID
     }
 }

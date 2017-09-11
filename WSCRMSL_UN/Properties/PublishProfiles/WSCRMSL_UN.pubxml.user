@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/WSCRMSL_UN.dll">
-      <publishTime>05/24/2017 13:02:32</publishTime>
+      <publishTime>09/11/2017 16:19:39</publishTime>
     </File>
     <File Include="bin/WSCRMSL_UN.XmlSerializers.dll">
       <publishTime>05/24/2017 13:02:36</publishTime>
@@ -91,7 +91,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/17/2017 14:53:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/17/2017 14:53:51</publishTime>
+      <publishTime>09/04/2017 10:53:53</publishTime>
     </File>
   </ItemGroup>
 </Project>

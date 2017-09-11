@@ -31,5 +31,3 @@ c:\users\samuel\documents\visual studio 2015\Projects\WSCRMSL_UN\WSCRMSL_UN\bin\
 c:\users\samuel\documents\visual studio 2015\Projects\WSCRMSL_UN\WSCRMSL_UN\obj\Release\WSCRMSL_UN.dll
 c:\users\samuel\documents\visual studio 2015\Projects\WSCRMSL_UN\WSCRMSL_UN\obj\Release\WSCRMSL_UN.pdb
 c:\users\samuel\documents\visual studio 2015\Projects\WSCRMSL_UN\WSCRMSL_UN\obj\Release\WSCRMSL_UN.csprojResolveAssemblyReference.cache
-C:\Users\Samuel\Documents\Visual Studio 2015\Projects\WSCRMSL_UN\WSCRMSL_UN\bin\WSCRMSL_UN.XmlSerializers.dll
-C:\Users\Samuel\Documents\Visual Studio 2015\Projects\WSCRMSL_UN\WSCRMSL_UN\obj\Release\WSCRMSL_UN.XmlSerializers.dll

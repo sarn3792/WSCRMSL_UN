@@ -22,15 +22,5 @@ namespace WSCRMSL_UN.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://un-app-01:8084/WSUpdateF.asmx")]
-        public string WSCRMSL_UN_CRM_WSUpdateF {
-            get {
-                return ((string)(this["WSCRMSL_UN_CRM_WSUpdateF"]));
-            }
-        }
     }
 }
